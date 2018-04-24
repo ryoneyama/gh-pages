@@ -5,6 +5,7 @@ var CACHE_NAME = 'pwa-cache-sample';
 var urlsToCache = [
 	'./index.html',
 	'./link.html',
+	'./link2.html',
 	'./scripts/main.js',
 	'./css/normalize.css',
 	'./images/computer_smartphone_connect.png'
