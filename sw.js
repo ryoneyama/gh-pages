@@ -3,7 +3,6 @@
 // キャッシュ名とキャッシュファイルの指定
 var CACHE_NAME = 'pwa-cache-sample1';
 var urlsToCache = [
-	'./',
 	'./index.html',
 	'./link.html',
 	'./link2.html',
