@@ -45,10 +45,14 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
 	console.log('[ServiceWorker] Fetch', event.request.url);
 	event.respondWith(
-		fetch(event.request)
-		.catch(function() {
-			console.log('[ServiceWorker] Get Cache Page')
-			return caches.match(event.request);
+		caches.open(CACHE_NAME).then(function(cache){
+			return cache.match(event.request).then(function(response) {
+				var fetchPromise = fetch(event.request).then(function(networkResponse) {
+					cache.put(event.request, networkResponse.clone());
+					return networkResponse;
+				})
+				return response || fetchPromise;
+			})
 		})
 	);
 });
