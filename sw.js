@@ -37,10 +37,10 @@ self.addEventListener('activate', function(event) {
 					if ( key !== CACHE_NAME){
 						return caches.delete(key);
 					}
-				}))
+				}));
 			})
-	)
-})
+	);
+});
 
 // リソースフェッチ時のキャッシュロード処理
 self.addEventListener('fetch', function(event) {
