@@ -214,6 +214,11 @@ html, body {
   z-index: 99;
 }
 
+.weather_flex {
+  display:flex;
+  justify-content: space-around;
+}
+
 .weather .day {
   font-size: 1.5em;
   line-height: 32px;
@@ -225,22 +230,24 @@ html, body {
 }
 
 .weather .weather_info {
-  padding: 10px 15px;
   line-height: normal;
+  display:flex;
 }
 
 .weather .weather_info .weather_ico {
-  padding: 10px;
-  float: left;
+  padding: 10px 5px;
+  max-width: 100%;
+  height: auto;
 }
 
 .weather .weather_info .telop {
   font-size: 1.5em;
-  padding: 10px;
+  padding: 10px 5px;
 }
 
-.weather .weather_info .temperature {
+.weather .temperature {
+  line-height: normal;
   font-size: 2em;
-  padding: 10px;
-  clear: left;
+  padding: 10px 5px;
+  display:block!important;
 }
